@@ -13,6 +13,7 @@ import { MainLayoutComponent } from './shared/components/main-layout/main-layout
 import { PostComponent } from './shared/components/post/post.component';
 import { SharedModule } from './shared/shared.module';
 import { environment } from '../environments/environment';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 
 const INTERCEPTOR_PROVIDER: Provider = {
@@ -36,6 +37,12 @@ registerLocaleData(ruLocale, 'ru')
     BrowserModule,
     AppRoutingModule,
     SharedModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the app is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    }),
     
   ],
   providers: [INTERCEPTOR_PROVIDER],
