@@ -1,9 +1,11 @@
+import { registerLocaleData } from '@angular/common';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { CommonModule, registerLocaleData } from '@angular/common';
 import ruLocale from '@angular/common/locales/ru';
 import { NgModule, Provider } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
+import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
@@ -12,9 +14,6 @@ import { AuthInterceptor } from './shared/auth.interceptor';
 import { MainLayoutComponent } from './shared/components/main-layout/main-layout.component';
 import { PostComponent } from './shared/components/post/post.component';
 import { SharedModule } from './shared/shared.module';
-import { environment } from '../environments/environment';
-import { ServiceWorkerModule } from '@angular/service-worker';
-
 
 const INTERCEPTOR_PROVIDER: Provider = {
   provide: HTTP_INTERCEPTORS,
@@ -23,7 +22,6 @@ const INTERCEPTOR_PROVIDER: Provider = {
 }
 
 registerLocaleData(ruLocale, 'ru')
-
 
 @NgModule({
   declarations: [

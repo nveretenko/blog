@@ -1,9 +1,10 @@
-import { switchMap } from 'rxjs/operators';
-import { PostsService } from './../shared/posts.service';
-import { Post } from 'src/app/shared/interfaces';
-import { Component, Input, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
+import { Observable } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
+
+import { Post } from 'src/app/shared/interfaces';
+import { PostsService } from './../shared/posts.service';
 
 @Component({
   selector: 'app-post-page',

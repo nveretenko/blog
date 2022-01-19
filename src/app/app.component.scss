@@ -1,0 +1,10 @@
+.repo {
+  text-align: center;
+  a {
+    font-size: 1.2rem;
+    color: inherit;
+    &:hover {
+      color: blue;
+    }
+  }
+}

@@ -1,8 +1,9 @@
-import { AlertService } from './../shared/services/alert.service';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Post } from 'src/app/shared/interfaces';
 import { PostsService } from 'src/app/shared/posts.service';
+
+import { AlertService } from './../shared/services/alert.service';
 
 @Component({
   selector: 'app-create-page',

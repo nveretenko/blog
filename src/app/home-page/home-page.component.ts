@@ -1,6 +1,7 @@
-import { PostsService } from 'src/app/shared/posts.service';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
+import { PostsService } from 'src/app/shared/posts.service';
+
 import { Post } from '../shared/interfaces';
 
 @Component({

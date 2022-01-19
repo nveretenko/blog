@@ -1,9 +1,10 @@
-import { environment } from './../../../../environments/environment';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http'
 import { Observable, Subject, throwError } from 'rxjs';
-import { catchError, tap } from 'rxjs/operators'
+import { catchError, tap } from 'rxjs/operators';
 import { FbAuthResponse, User } from 'src/app/shared/interfaces';
+
+import { environment } from './../../../../environments/environment';
 
 @Injectable({ providedIn:'root' })
 export class AuthService {
